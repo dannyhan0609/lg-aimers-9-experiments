@@ -4,6 +4,10 @@
 
 투구 직전까지 알 수 있는 경기 상황과 선수 이력을 바탕으로 각 투구의 제구 성공 확률을 예측하는 팀 프로젝트였습니다. 저는 CatBoost 모델의 시간순 검증, 트리 수 선택, 파생변수와 확률 보정 실험을 담당했습니다. 아래는 제가 수행한 실험의 검증 방법과 집계 결과입니다.
 
+[M2 학습 노트북 보기](m2-catboost-validation.ipynb) · [Open in Colab](https://colab.research.google.com/github/dannyhan0609/lg-aimers-9-experiments/blob/main/m2-catboost-validation.ipynb)
+
+노트북에서 연도별 트리 수와 Brier Score를 확인할 수 있습니다. 기본 실행은 합성 데이터 CPU 데모입니다.
+
 ## 트리 수 선택을 여러 시즌으로 확장
 
 **문제 발견.** 기존 모델(M1)은 평가 직전 한 시즌의 결과로 트리 수를 골랐습니다. 이 방식으로 2024년 평가 모델에 트리 1개가 선택되어, 한 시즌의 결과에 의존하는 선택 방식을 점검했습니다.
